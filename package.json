@@ -9,7 +9,7 @@
     "client": "cd client && npm run dev",
     "build": "cd client && npm run build",
     "start": "node server/index.js",
-    "install-all": "npm install && cd client && npm install"
+    "install-all": "npm install && if [ -d client ]; then cd client && npm install; else echo 'Error: client directory not found' && exit 1; fi"
   },
   "keywords": ["ecommerce", "store", "template"],
   "author": "",
@@ -28,5 +28,6 @@
     "concurrently": "^8.2.2"
   }
 }
+
 
 
